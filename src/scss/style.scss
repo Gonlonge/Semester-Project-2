@@ -1,0 +1,10 @@
+$primary-colour: #e85a4f;
+$secondary-colour: green;
+
+body {
+  background-color: $primary-colour;
+}
+
+p {
+  color: $secondary-colour;
+}
