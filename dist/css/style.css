@@ -1,9 +1,19 @@
-body {
-  background-color: #e85a4f;
+.main-background-color {
+  background-color: #efefef;
 }
 
-p {
-  color: green;
+/* gallery */
+body {
+  background: #f4f4f4;
 }
+
+/* front page */
+.banner {
+  background: #a770ef;
+  background: -webkit-gradient(linear, left top, right top, from(#a770ef), color-stop(#cf8bf3), to(#fdb99b));
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
+
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

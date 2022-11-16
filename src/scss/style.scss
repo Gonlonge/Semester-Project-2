@@ -1,10 +1,18 @@
-$primary-colour: #e85a4f;
-$secondary-colour: green;
+$primary-colour: #efefef;
+$secondary-colour: #a770ef;
 
-body {
+.main-background-color {
   background-color: $primary-colour;
 }
 
-p {
-  color: $secondary-colour;
+/* gallery */
+body {
+  background: #f4f4f4;
+}
+
+/* front page */
+.banner {
+  background: $secondary-colour;
+  background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
 }
