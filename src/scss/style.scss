@@ -1,12 +1,17 @@
-$primary-colour: #efefef;
-$secondary-colour: #6ca7ff;
+$primary-color: #efefef;
+$secondary-color: #e04747;
+$primary-button-color: #6ca7ff;
 
 // Body
 .main-background-color {
-  background-color: $primary-colour;
+  background-color: $primary-color;
 }
 
 // Button
 .btn-outline-success:hover {
-  background-color: $secondary-colour;
+  background-color: $primary-button-color;
+}
+
+.section-background {
+  background-color: $secondary-color;
 }
