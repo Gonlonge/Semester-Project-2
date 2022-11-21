@@ -1,18 +1,12 @@
 $primary-colour: #efefef;
-$secondary-colour: #a770ef;
+$secondary-colour: #6ca7ff;
 
+// Body
 .main-background-color {
   background-color: $primary-colour;
 }
 
-/* gallery */
-body {
-  background: #f4f4f4;
-}
-
-/* front page */
-.banner {
-  background: $secondary-colour;
-  background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
-  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+// Button
+.btn-outline-success:hover {
+  background-color: $secondary-colour;
 }
