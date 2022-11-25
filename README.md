@@ -1,3 +1,6 @@
+<!-- metroid
+metroid@stud.noroff.no metroid123-->
+
 # Semester-Project-2
 
 ## Project trello board kaban and timing

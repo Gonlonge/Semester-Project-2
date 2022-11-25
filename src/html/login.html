@@ -9,10 +9,6 @@
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <script
-      src="https://kit.fontawesome.com/037a8e9cbf.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="/dist/css/style.css" />
     <title>Auction</title>
   </head>
@@ -25,38 +21,40 @@
               <div>
                 <h2 class="text-center mt-5">Hello</h2>
                 <a class="text-decoration-none" href="index.html">Create an account</a>
-
-                <form  class="text-center" action="/index.html">
+                <form id="loginForm" class="text-center">
                     <div >
                       <div class="my-3">
                         <input
-                          type="username"
-                          class="form-control py-3"
-                          id="username"
-                          placeholder="username"
-                          aria-label="username"
-                          required
-                        />
+                        id="username"
+                        aria-label="Only @(stud.)noroff.no domains are allowed to login."
+                        class="form-control py-3"
+                        type="email"
+                        name="email"
+                        required
+                        pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                        placeholder="email (@noroff.no)"
+                      />
                       </div>
                       <div class="my-1">
                         <input
-                          type="password"
-                          class="form-control py-3"
-                          id="password"
-                          placeholder="password"
-                          aria-label="password"
-                          required
-                        />
+                        type="password"
+                        class="form-control py-3"
+                        id="password"
+                        placeholder="password"
+                        aria-label="password"
+                        name="password"
+                        required
+                        minlength="8"
+                      />
                     </div>
-                    </form>
                 <div class="mb-3">
                  <input type="checkbox" name="rememberme" id="rememberme" />
                  <label for="rememberme">Remember password</label>
                  </div>
-                <button class="btn btn-primary px-5 btn-lg btn-block shadow-lg text-dark" type="submit">
+                <button id="sign-in-button" class="btn btn-primary px-5 btn-lg btn-block shadow-lg text-dark">
                   Log In
                 </button>
-
+              </form>
 
               </div>
             </div>
@@ -64,14 +62,10 @@
         </div>
       </div>
     </section>
-
-
-
-
-      
           <!--  -->
         </div>
       </div>
     </section>
+    <script type="module" src="/src/js/pages/login.mjs"></script>
   </body>
 </html>
