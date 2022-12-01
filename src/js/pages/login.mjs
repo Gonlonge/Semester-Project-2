@@ -1,8 +1,5 @@
 import { postAuthLogin, isLoggedIn } from "/src/js/noroff-api-helper.mjs";
 
-// Test user:
-// ("gonzalo01@stud.noroff.no", "Gonzalo123")
-
 /**
  * Listen to Submit form
  */
@@ -34,7 +31,3 @@ if (loginForm) {
     console.error("Something went wrong");
   });
 }
-
-// if (isLoggedIn) {
-//     window.location.href = "/home.html";
-// }

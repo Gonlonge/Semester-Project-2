@@ -1,3 +1,28 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Nanum";
+}
+
+p,
+a {
+  font-family: "oswald", Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+a:hover {
+  color: #6ca7ff;
+}
+
+.nav-link:hover {
+  color: #6ca7ff;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
 .main-background-color {
   background-color: #efefef;
 }

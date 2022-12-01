@@ -7,7 +7,7 @@ import { load, save } from "/src/js/storage-helper.mjs";
 const API_BASE_URL = "https://nf-api.onrender.com";
 const API_AUTH_REGISTER = "/api/v1/auction/auth/register";
 const API_AUTH_LOGIN = "/api/v1/auction/auth/login";
-// const API_AUCTION_PROFILES = "/api/v1/auction/profiles";
+const API_AUCTION_PROFILE = "/api/v1/auction/profiles/";
 
 const userKey = "noroff-user-key";
 
@@ -124,21 +124,6 @@ async function postAuthRegister(username, email, password) {
   return null;
 }
 
-// /**
-//  * Get all your social posts
-//  * @returns http response and json data
-//  */
-// async function getProfiles() {
-//   const apiResponse = await noroffGET(API_AUCTION_PROFILES);
-//   console.table(apiResponse);
-//   const json = await apiResponse.json();
-//   console.log(json);
-//   return {
-//     json: json,
-//     statusCode: apiResponse.status,
-//   };
-// }
-
 /**
  * Sign in to Noroff
  * @param {string} email
@@ -186,12 +171,29 @@ async function noroffGET(url) {
   return null;
 }
 
+async function getAuctionProfile(name) {
+  try {
+    const request = {
+      method: "GET",
+      headers: getHeader(),
+    };
+    const apiResponse = await fetch(
+      API_BASE_URL + API_AUCTION_PROFILE + (name ?? ""),
+      request
+    );
+    console.table(apiResponse);
+    const json = await apiResponse.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export {
+  getAuctionProfile,
   postAuthLogin,
   postAuthRegister,
   isLoggedIn,
   getProfileName,
   noroffGET,
 };
-
-// getProfiles,
