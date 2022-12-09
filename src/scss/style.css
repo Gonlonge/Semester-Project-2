@@ -1,12 +1,71 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Nanum";
+}
+
+p,
+a {
+  font-family: "oswald", Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+a:hover {
+  color: #36ac5d;
+}
+
+.nav-link:hover {
+  color: #36ac5d;
+}
+
+.nav-link {
+  font-size: 18px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
 .main-background-color {
   background-color: #efefef;
 }
 
 .btn-outline-success:hover {
-  background-color: #6ca7ff;
+  background-color: #36ac5d;
 }
 
 .section-background {
   background-color: #e04747;
+}
+
+#displayProfileImage {
+  width: 100px;
+  height: 100;
+  border: 2px solid black;
+}
+
+.btn-primary {
+  color: #6ca7ff;
+}
+
+.btn-primary {
+  background-color: #6ca7ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #36ac5d;
+}
+
+.dropdown-item:hover {
+  background-color: #36ac5d;
+}
+
+.img-fluid {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 200px;
 }
 /*# sourceMappingURL=style.css.map */

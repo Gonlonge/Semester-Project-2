@@ -2,7 +2,7 @@
  * Noroff API Helper
  */
 
-import { load, save } from "/src/js/storage-helper.mjs";
+import { load, save, remove } from "/src/js/storage-helper.mjs";
 
 const API_BASE_URL = "https://nf-api.onrender.com";
 const API_AUTH_REGISTER = "/api/v1/auction/auth/register";
@@ -46,7 +46,7 @@ function isLoggedIn() {
     const token = res["accessToken"];
     return token !== null;
   }
-  return null;
+  return false;
 }
 
 function getProfileName() {
@@ -58,6 +58,10 @@ function getProfileName() {
     return name;
   }
   return null;
+}
+
+function logOut() {
+  remove(userKey);
 }
 
 /**
@@ -94,7 +98,7 @@ async function noroffPOST(url, body) {
  * @param {string} password - password for signing in
  * @returns {obj} object with email, name, and email, or null if validation fails or successful http response
  */
-async function postAuthRegister(username, email, password) {
+async function postAuthRegister(username, email, password, profileImage) {
   if (!email || !username || !password) {
     return null;
   }
@@ -107,6 +111,7 @@ async function postAuthRegister(username, email, password) {
       name: username,
       email: email,
       password: password,
+      avatar: profileImage,
     };
     let apiResponse = await noroffPOST(API_AUTH_REGISTER, body);
     console.table(apiResponse);
@@ -156,6 +161,7 @@ async function postAuthLogin(email, password) {
   return null;
 }
 
+//
 async function noroffGET(url) {
   try {
     const request = {
@@ -171,6 +177,7 @@ async function noroffGET(url) {
   return null;
 }
 
+//
 async function getAuctionProfile(name) {
   try {
     const request = {
@@ -189,6 +196,27 @@ async function getAuctionProfile(name) {
   }
 }
 
+// Get avatar
+
+async function updateProfileImage(url, name) {
+  try {
+    const request = {
+      method: "PUT",
+      headers: getHeader(),
+      body: {
+        avatar: url,
+      },
+    };
+    const apiResponse = await fetch(
+      `${API_BASE_URL}${API_AUCTION_PROFILE}${name}/media`,
+      request
+    );
+    console.table(apiResponse);
+    const json = await apiResponse.json();
+    return json;
+  } catch (error) {}
+}
+
 export {
   getAuctionProfile,
   postAuthLogin,
@@ -196,4 +224,6 @@ export {
   isLoggedIn,
   getProfileName,
   noroffGET,
+  logOut,
+  updateProfileImage,
 };

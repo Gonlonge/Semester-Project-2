@@ -27,12 +27,12 @@
   </head>
   <body>
     <section>
-      <div class="container my-3"></div>
+      <div class="container my-3">
+      </div>
+  
       <nav class="navbar navbar-expand-lg shadow-lg">
         <div class="container my-3">
-          <a class="navbar-brand nan" href="/src/html/index.html"
-            ><h1>Auction Space</h1></a
-          >
+         <a class="navbar-brand nan" href="index.html"><h1>Auction Space</h1></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -40,51 +40,27 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation">
+            <span>
+          <i class="fa-solid fa-bars fa-lg"></i></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="profile.html"
-                  >Profile</a
-                >
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="auctions.html"
-                  >All Auctions</a
-                >
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="cart.html"
-                  ><i class="fa-solid fa-cart-shopping fa-lg"></i
-                ></a>
-              </li>
-            </ul>
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="profile.html">Profile</a>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="login.html">Log out</a>
+              </ul>
             <form class="d-flex" role="search">
               <input
                 class="form-control me-2"
                 type="search"
                 placeholder="Search..."
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-outline-success border text-dark"
-                type="submit"
-              >
-                Search
+                aria-label="Search"/>
+              <button class="btn" type="submit">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
           </div>
@@ -92,9 +68,144 @@
       </nav>
     </section>
     <section class="mt-5 container">
-      <div class="apiProfile"></div>
+      <section>
+        <div class=" mb-4">
+        <div class="text-center">
+        <img
+        class="rounded-circle img-fluid shadow-lg avatar" style="width: 150px;">
+        <h2 class="mb-0 MainProfileName"></h2>
+        <div class="d-flex justify-content-center mb-2 mt-3">
+        <button type="button" class="btn btn-outline-success  ms-1 shadow-lg  border rounded py-2 px-4 text-dark" data-bs-toggle="modal" data-bs-target="#profileModal">Edit</button>
+        </div> 
+        <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="labelModal">
+        <div class="modal-dialog modal-content">
+        <div class="mt-2">
+        <p id="labelModal">Edit Profile</p>
+        </div>
+        <div class="p-2">
+        <img 
+        class="rounded-circle img-fluid shadow-lg editAvatar" style="width: 155px;">
+        <div class="mt-3">
+        <input
+        type="picture"
+        class="form-control py-3"
+        id="editProfileImage"
+        placeholder="Profile picture"
+        aria-label="image"
+        /></div>
+        <button id="saveProfileImage" type="button" class="btn btn-outline-success shadow my-3">Save</button>
+        </div>
+        </section>
+        <div class="mb-4">
+        <div>
+              <p class="mb-0 profileName">User:</p>
+          <hr>
+              <p class="mb-0 email">Email:</p>
+          <hr>
+              <p class="mb-0 totalCredits">Credits:</p>
+          <hr>
+      <h2 class="mb-3 mt-5 text-center">New Ad</h2>
+                <textarea
+                  id="postTitle" rows="1"
+                  class="mt-4 form-control"
+                  placeholder="Title..."
+                ></textarea>
+                <textarea
+                  id="postBody" rows="3"
+                  class="mt-2 form-control"
+                  placeholder="Description..."
+                ></textarea>
+                <button 
+                  id="publishPost"
+                  type="button"
+                  class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
+                  Publish
+                </button>
+      
+      <section>
+        <div class="mt-5">
+        <h2 class="mb-3 text-center">Your Advertisements</h2>
+        <div>
+        <div class="row">
+        <div class="col-sm">
+        <img src="/images/150.png" alt="">
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Title</span></p>
+        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
+        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
+        </div>
+        </div>
+        </div>
+        <div class="mt-4">
+        <div class="row">
+        <div class="col-sm">
+        <img src="/images/150.png" alt="">
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Title</span></p>
+        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
+        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <hr class="my-5">
+        </section>
+        <section>
+        <div>
+        <h2 class="mb-3 text-center">Your Bids</h2>
+        <div>
+        <div class="row">
+        <div class="col-sm">
+        <img src="/images/150.png" alt="">
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Title</span></p>
+        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
+        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
+        </div>
+        </div>
+        </div>
+        <div class="mt-4">
+        <div class="row">
+        <div class="col-sm">
+        <img src="/images/150.png" alt="">
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Title</span></p>
+        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
+        </div>
+        <div class="col-sm">
+        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
+        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </section>
     </section>
+    <footer">
+      <div class="mt-5">
+      </div>
+      <div class="text-center text-dark shadow-lg py-5">
+        <a href = "mailto: gonlonge@icloud.com" class="text-decoration-none ">
+        <div>Contact Us</div>
+        <div>Auction Space</div>
+      </a>
+      </div>
+    </footer>
     <script type="module" src="/src/js/pages/profile.mjs"></script>
+    <script type="module" src="/src/js/components/createListing.mjs"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>

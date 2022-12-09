@@ -12,15 +12,19 @@ a {
 }
 
 a:hover {
-  color: #6ca7ff;
+  color: #36ac5d;
 }
 
 .nav-link:hover {
-  color: #6ca7ff;
+  color: #36ac5d;
 }
 
 .nav-link {
   font-size: 18px;
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 .main-background-color {
@@ -28,11 +32,40 @@ a:hover {
 }
 
 .btn-outline-success:hover {
-  background-color: #6ca7ff;
+  background-color: #36ac5d;
 }
 
 .section-background {
   background-color: #e04747;
+}
+
+#displayProfileImage {
+  width: 100px;
+  height: 100;
+  border: 2px solid black;
+}
+
+.btn-primary {
+  color: #6ca7ff;
+}
+
+.btn-primary {
+  background-color: #6ca7ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #36ac5d;
+}
+
+.dropdown-item:hover {
+  background-color: #36ac5d;
+}
+
+.img-fluid {
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,9 @@
 $primary-color: #efefef;
 $secondary-color: #e04747;
 $primary-button-color: #6ca7ff;
+$button-hover-color: #36ac5d;
 
-//fonts
+// Fonts
 
 h1,
 h2,
@@ -18,15 +19,19 @@ a {
 }
 
 a:hover {
-  color: $primary-button-color;
+  color: $button-hover-color;
 }
 
 .nav-link:hover {
-  color: $primary-button-color;
+  color: $button-hover-color;
 }
 
 .nav-link {
   font-size: 18px;
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 // Body
@@ -36,9 +41,39 @@ a:hover {
 
 // Button
 .btn-outline-success:hover {
-  background-color: $primary-button-color;
+  background-color: $button-hover-color;
 }
 
 .section-background {
   background-color: $secondary-color;
+}
+
+#displayProfileImage {
+  width: 100px;
+  height: 100;
+  border: 2px solid black;
+}
+
+.btn-primary {
+  color: $primary-button-color;
+}
+
+.btn-primary {
+  background-color: $primary-button-color;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: $button-hover-color;
+}
+
+.dropdown-item:hover {
+  background-color: $button-hover-color;
+}
+
+// Images
+.img-fluid {
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
 }

@@ -33,9 +33,9 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+          aria-label="Toggle navigation">
+          <span>
+        <i class="fa-solid fa-bars fa-lg"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -44,49 +44,23 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="profile.html">Profile</a>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="auctions.html">All Auctions</a>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-            </li>
+                  <a class="nav-link" id="logOut" aria-current="page">Log out</a>
             </ul>
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"
               placeholder="Search..."
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success  border text-dark" type="submit">
-              Search
+              aria-label="Search"/>
+            <button class="btn" type="submit">
+              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
             </button>
-
           </form>
         </div>
       </div>
     </nav>
   </section>
     <section class="container mt-5">
-
-      <div class="row justify-content-center">
-        <div class="text-center">
-          <button
-            id="filterLastHour"
-            type="button"
-            class="shadow-lg text-dark text-decoration-none border rounded py-2 px-3">
-            Last hour
-          </button>
-          <button id="filterToday" type="button" class="shadow-lg text-dark text-decoration-none border rounded py-2 px-3 mx-4">
-            Today
-          </button>
-          <button
-            id="filterAllPosts"
-            type="button"
-            class="shadow-lg text-dark text-decoration-none border rounded py-2 px-3">
-            All posts
-          </button>
-        </div>
-      </div>
-    </div>
       <div class="row apiContainer mt-5">
       </div>
     </section>
@@ -94,12 +68,14 @@
       <div class="mt-5">
       </div>
       <div class="text-center text-dark shadow-lg py-5">
-       <p>Contact Us</p>
-        <a class="text-dark">Auction Space</a>
+        <a href = "mailto: gonlonge@icloud.com" class="text-decoration-none ">
+        <div>Contact Us</div>
+        <div>Auction Space</div>
+      </a>
       </div>
     </footer>
     <script type="module" src="/src/js/pages/index.mjs"></script>
-    <script type="module" src="/src/js/components/search.js"></script>
+    <script type="module" src="/src/js/noroff-api-helper.mjs"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
