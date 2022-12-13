@@ -1,4 +1,4 @@
-import { postAuthRegister, postAuthLogin } from "/src/js/noroff-api-helper.mjs";
+import { postAuthRegister, postAuthLogin } from "src/js/noroff-api-helper.mjs";
 
 // Registration:
 const registerForm = document.querySelector("#registerForm");

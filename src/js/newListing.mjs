@@ -1,4 +1,4 @@
-import { createListings, noroffPOST } from "../noroff-api-helper.mjs";
+import { createListings, noroffPOST } from "..noroff-api-helper.mjs";
 import { makePost } from "../post-helper.mjs";
 
 // Home:

@@ -1,8 +1,8 @@
 import {
   getAuctionProfile,
   updateProfileImage,
-} from "/src/js/noroff-api-helper.mjs";
-import { load, save } from "/src/js/storage-helper.mjs";
+} from "src/js/noroff-api-helper.mjs";
+import { load, save } from "src/js/storage-helper.mjs";
 
 const userKey = "noroff-user-key";
 

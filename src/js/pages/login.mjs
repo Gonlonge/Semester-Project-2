@@ -1,4 +1,4 @@
-import { postAuthLogin } from "/src/js/noroff-api-helper.mjs";
+import { postAuthLogin } from "src/js/noroff-api-helper.mjs";
 
 /**
  * Listen to Submit form
