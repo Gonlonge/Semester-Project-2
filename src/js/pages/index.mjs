@@ -1,4 +1,4 @@
-import { logOut, isLoggedIn } from "src/js/noroff-api-helper.mjs";
+import { logOut, isLoggedIn } from "/src/js/noroff-api-helper.mjs";
 
 const API_BASE_URL = "https://nf-api.onrender.com";
 const API_GET_LISTNING = "/api/v1/auction/listings";

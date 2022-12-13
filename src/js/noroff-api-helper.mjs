@@ -2,7 +2,7 @@
  * Noroff API Helper
  */
 
-import { load, save, remove } from "src/js/storage-helper.mjs";
+import { load, save, remove } from "/src/js/storage-helper.mjs";
 
 const API_BASE_URL = "https://nf-api.onrender.com";
 const API_AUTH_REGISTER = "/api/v1/auction/auth/register";
