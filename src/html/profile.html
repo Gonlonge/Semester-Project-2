@@ -50,6 +50,11 @@
                 <a class="nav-link" aria-current="page" href="index.html">Home</a>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="profile.html">Profile</a>
+
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="new-listing.html">New Listing</a>
+                    <li class="nav-item">
+                  
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="login.html">Log out</a>
               </ul>
@@ -68,14 +73,43 @@
       </nav>
     </section>
     <section class="mt-5 container">
+      <!--  -->
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Edit Profile</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input
+        type="picture"
+        class="form-control py-3"
+        id="editProfileImage"
+        placeholder="Profile picture"
+        aria-label="image"
+        />
+      </div>
+      <div class="modal-footer">
+        <button id="saveProfileImage" type="button" class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
       <section>
         <div class=" mb-4">
         <div class="text-center">
         <img
-        class="rounded-circle img-fluid shadow-lg avatar" style="width: 150px;">
+        class="avatar img-profile">
         <h2 class="mb-0 MainProfileName"></h2>
         <div class="d-flex justify-content-center mb-2 mt-3">
-        <button type="button" class="btn btn-outline-success  ms-1 shadow-lg  border rounded py-2 px-4 text-dark" data-bs-toggle="modal" data-bs-target="#profileModal">Edit</button>
+<button type="button" class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+ Edit
+</button>
         </div> 
         <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="labelModal">
         <div class="modal-dialog modal-content">
@@ -96,6 +130,7 @@
         <button id="saveProfileImage" type="button" class="btn btn-outline-success shadow my-3">Save</button>
         </div>
         </section>
+        <!--  -->
         <div class="mb-4">
         <div>
               <p class="mb-0 profileName">User:</p>
@@ -104,96 +139,9 @@
           <hr>
               <p class="mb-0 totalCredits">Credits:</p>
           <hr>
-      <h2 class="mb-3 mt-5 text-center">New Ad</h2>
-                <textarea
-                  id="postTitle" rows="1"
-                  class="mt-4 form-control"
-                  placeholder="Title..."
-                ></textarea>
-                <textarea
-                  id="postBody" rows="3"
-                  class="mt-2 form-control"
-                  placeholder="Description..."
-                ></textarea>
-                <button 
-                  id="publishPost"
-                  type="button"
-                  class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
-                  Publish
-                </button>
-      
-      <section>
-        <div class="mt-5">
-        <h2 class="mb-3 text-center">Your Advertisements</h2>
-        <div>
-        <div class="row">
-        <div class="col-sm">
-        <img src="/images/150.png" alt="">
         </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Title</span></p>
-        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
-        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
-        </div>
-        </div>
-        </div>
-        <div class="mt-4">
-        <div class="row">
-        <div class="col-sm">
-        <img src="/images/150.png" alt="">
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Title</span></p>
-        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
-        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <hr class="my-5">
-        </section>
-        <section>
-        <div>
-        <h2 class="mb-3 text-center">Your Bids</h2>
-        <div>
-        <div class="row">
-        <div class="col-sm">
-        <img src="/images/150.png" alt="">
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Title</span></p>
-        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
-        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
-        </div>
-        </div>
-        </div>
-        <div class="mt-4">
-        <div class="row">
-        <div class="col-sm">
-        <img src="/images/150.png" alt="">
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Title</span></p>
-        <div class="mb-0"><p class="small">Decription Lorem ipsum dolor</p></div>
-        </div>
-        <div class="col-sm">
-        <p class="mb-0"><span class="text-dark">Current: $2104</span></p>
-        <div class="text-danger"> <p class="small">Remaining: 1t 20m</p></div>
-        </div>
-        </div>
-        </div>
-        </div>
-      </section>
-    </section>
+      </div>
+ </section>
     <footer">
       <div class="mt-5">
       </div>

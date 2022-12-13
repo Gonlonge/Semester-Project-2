@@ -1,5 +1,6 @@
 $primary-color: #efefef;
 $secondary-color: #e04747;
+
 $primary-button-color: #6ca7ff;
 $button-hover-color: #36ac5d;
 
@@ -76,4 +77,10 @@ a:hover {
   width: 100%;
   object-fit: cover;
   max-height: 200px;
+}
+
+// Images
+.img-profile {
+  max-height: 150px;
+  max-width: 150px;
 }

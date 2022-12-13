@@ -1,6 +1,10 @@
 <!-- metroid
 metroid@stud.noroff.no metroid123-->
 
+<!-- sullamitten
+
+supermetroid -->
+
 <!-- "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODM1LCJuYW1lIjoiaGFsbGFiYWxsYSIsImVtYWlsIjoiaGFsbGFiYWxsYUBzdHVkLm5vcm9mZi5ubyIsImF2YXRhciI6bnVsbCwiYmFubmVyIjpudWxsLCJpYXQiOjE2Njk3MjM4MDR9.XJJQSSGw4JD_vU5E9dH1eDcaeTUEFk4GDmUzwZb2cko" -->
 
 # Semester-Project-2

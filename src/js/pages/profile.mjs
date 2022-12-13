@@ -2,7 +2,7 @@ import {
   getAuctionProfile,
   updateProfileImage,
 } from "/src/js/noroff-api-helper.mjs";
-import { load } from "/src/js/storage-helper.mjs";
+import { load, save } from "/src/js/storage-helper.mjs";
 
 const userKey = "noroff-user-key";
 
@@ -18,6 +18,8 @@ async function getProfile() {
   try {
     const user = load(userKey);
     const json = await getAuctionProfile(user.name);
+    console.log("JSON");
+    console.log(json);
     profileHtml(json);
   } catch (error) {
     console.log(error);
@@ -33,12 +35,12 @@ function profileHtml(user) {
   totalCredits.innerHTML += ` ${user.credits}`;
 }
 
-function saveImage() {
+async function saveImage() {
   console.log("CLICK");
   const user = load(userKey);
-
-  // TODO: Use avatar object to get url
-  updateProfileImage(avatar.user.name);
+  const res = await updateProfileImage(editProfileImage.value, user.name);
+  save(res);
+  avatar.setAttribute("src", res.avatar);
 }
 console.log(saveProfileImage);
 saveProfileImage.addEventListener("click", saveImage);

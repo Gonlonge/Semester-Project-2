@@ -24,7 +24,7 @@ async function getListing(url) {
     for (let i = 0; i < json.length; i++) {
       console.log(json[i]);
       content.innerHTML += `
-      <div class=" shadow-lg p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
+      <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
         <div class="card border-white my-5">
           <img src="${json[i].media}" class="img-fluid"/>
           <div class="mt-1">

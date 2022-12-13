@@ -1,4 +1,4 @@
-import { postAuthRegister } from "/src/js/noroff-api-helper.mjs";
+import { postAuthRegister, postAuthLogin } from "/src/js/noroff-api-helper.mjs";
 
 // Registration:
 const registerForm = document.querySelector("#registerForm");
@@ -25,8 +25,15 @@ if (registerForm) {
       if (result.statusCode === 201) {
         console.log(result.json);
         console.log("Success! User has been registered at Noroff.");
-        window.location.href = "/src/html/index.html";
-        return;
+        const user = result.json;
+        console.log(user);
+        const res = await postAuthLogin(user.email, user.password);
+        if (res.statusCode === 200) {
+          console.log(res.json);
+          console.log("Success! User has been logged in.");
+          window.location.href = "/src/html/index.html";
+          return;
+        }
       }
       if (result.statusCode === 401) {
         console.log("Incorrect email, name and password");
