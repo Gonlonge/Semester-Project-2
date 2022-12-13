@@ -20,7 +20,7 @@ if (loginForm) {
       if (result.statusCode === 200) {
         console.log(result.json);
         console.log("Success! User has been logged in.");
-        window.location.href = "/src/html/index.html";
+        window.location.href = "../../../index.html";
         return;
       }
       if (result.statusCode === 401) {

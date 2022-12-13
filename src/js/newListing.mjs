@@ -5,7 +5,7 @@ import { makePost } from "../post-helper.mjs";
 
 // Navigate to single post
 function openPost(id) {
-  window.location.href = "/new-listing.html?id=" + id;
+  window.location.href = "/src/html/new-listing.html?id=" + id;
 }
 window.openPost = openPost;
 
