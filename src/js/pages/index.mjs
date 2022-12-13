@@ -51,7 +51,7 @@ function logOutEvent() {
     //logging out
     console.log("click");
     logOut();
-    window.location.href = "/src/html/index.html";
+    window.location.href = "/index.html";
   } else {
     //logging in
     window.location.href = "/src/html/login.html";

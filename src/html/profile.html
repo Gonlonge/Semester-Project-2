@@ -58,7 +58,7 @@
                     <li class="nav-item">
                   
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/src/html/login.html">Log out</a>
+                    <a class="nav-link" id="logOut" aria-current="page">Log out</a>
               </ul>
             <form class="d-flex" role="search">
               <input
@@ -144,7 +144,7 @@
         </div>
       </div>
  </section>
-    <footer">
+    <footer class="fixed-bottom">
       <div class="mt-5">
       </div>
       <div class="text-center text-dark shadow-lg py-5">
@@ -154,6 +154,8 @@
       </a>
       </div>
     </footer>
+    <script type="module" src="/src/js/pages/index.mjs"></script>
+    <script type="module" src="/src/js/noroff-api-helper.mjs"></script>
     <script type="module" src="/src/js/pages/profile.mjs"></script>
     <script type="module" src="/src/js/components/createListing.mjs"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
