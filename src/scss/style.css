@@ -68,4 +68,9 @@ a:hover {
      object-fit: cover;
   max-height: 200px;
 }
+
+.img-profile {
+  max-height: 150px;
+  max-width: 150px;
+}
 /*# sourceMappingURL=style.css.map */

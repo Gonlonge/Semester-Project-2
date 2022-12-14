@@ -27,8 +27,9 @@ if (registerForm) {
         console.log("Success! User has been registered at Noroff.");
         const user = result.json;
         console.log(user);
-        const res = await postAuthLogin(user.email, user.password);
-        if (res.statusCode === 200) {
+        const res = await postAuthLogin(user.email, password);
+        console.log(res);
+        if (res && res.statusCode === 200) {
           console.log(res.json);
           console.log("Success! User has been logged in.");
           window.location.href = "../../../index.html";
