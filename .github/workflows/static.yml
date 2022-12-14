@@ -34,11 +34,12 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Install
         run: npm i
+      - name: Build bootstrap
+      - name: Build SASS
       - name: Build
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-        
         with:
           # Upload entire repository
           path: '.'
