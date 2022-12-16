@@ -8,7 +8,8 @@ const API_BASE_URL = "https://nf-api.onrender.com";
 const API_AUTH_REGISTER = "/api/v1/auction/auth/register";
 const API_AUTH_LOGIN = "/api/v1/auction/auth/login";
 const API_AUCTION_PROFILE = "/api/v1/auction/profiles/";
-const API_CREATE_POST = "/api/v1/auction/listings/";
+const API_CREATE_POST = "/api/v1/auction/listings";
+
 // const API_flag = "/?_seller=true&_bids=true&sort=created&sortOrder=desc";
 
 const userKey = "noroff-user-key";
@@ -233,23 +234,21 @@ async function updateProfileImage(url, name) {
 
 // Create post
 
-async function createListings(title, description) {
-  if (!title || !body) {
-    return null;
-  }
-  if (typeof title === "string" && typeof body === "string") {
-    const postBody = {
-      title: title,
-      description: description,
-    };
-    let apiResponse = await noroffPOST(API_BASE_URL, API_CREATE_POST, postBody);
-    const json = await apiResponse.json();
-    return {
-      json: json,
-      statusCode: apiResponse.status,
-    };
-  }
-  return null;
+async function createListings(title, description, endsAt, media) {
+  const postBody = {
+    title: title,
+    description: description,
+    endsAt: "2022-12-24T22:07:00.000Z",
+    // tags: [],
+    media: media,
+  };
+  let apiResponse = await noroffPOST(API_CREATE_POST, postBody);
+  const json = await apiResponse.json();
+
+  return {
+    json: json,
+    statusCode: apiResponse.status,
+  };
 }
 
 export {

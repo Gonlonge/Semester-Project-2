@@ -1,7 +1,7 @@
 import { logOut, isLoggedIn } from "/src/js/noroff-api-helper.mjs";
 
 const API_BASE_URL = "https://nf-api.onrender.com";
-const API_GET_LISTNING = "/api/v1/auction/listings";
+const API_GET_LISTNING = "/api/v1/auction/listings?sort=created&sortOrder=desc";
 
 const content = document.querySelector(".apiContainer");
 
@@ -16,11 +16,8 @@ async function getListing(url) {
       },
     };
     const response = await fetch(url, getAllData);
-    console.log(response);
     const json = await response.json();
 
-    console.log("JSON RESPONSE:");
-    console.log(json);
     for (let i = 0; i < json.length; i++) {
       console.log(json[i]);
       content.innerHTML += `

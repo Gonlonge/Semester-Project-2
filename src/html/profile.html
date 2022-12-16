@@ -1,163 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Auction, profile, user, free credits, most popular"
-    />
-    <link
-      rel="stylesheet"
-      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/c6b5d56161.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/dist/css/style.css" />
-    <title>Auction</title>
-  </head>
-  <body>
-    <section>
-      <div class="container my-3">
-      </div>
-  
-      <nav class="navbar navbar-expand-lg shadow-lg">
-        <div class="container my-3">
-         <a class="navbar-brand nan" href="/index.html"><h1>Auction Space</h1></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span>
-          <i class="fa-solid fa-bars fa-lg"></i></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/src/html/profile.html">Profile</a>
 
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
-                    <li class="nav-item">
-                  
-                  <li class="nav-item">
-                    <a class="nav-link" id="logOut" aria-current="page">Log out</a>
-              </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search..."
-                aria-label="Search"/>
-              <button class="btn" type="submit">
-                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auction, profile, user, free credits, most popular" />
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/c6b5d56161.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Oswald&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/dist/css/style.css" />
+  <title>Auction</title>
+</head>
+
+<body>
+  <section>
+    <div class="container my-3">
+    </div>
+
+    <nav class="navbar navbar-expand-lg shadow-lg">
+      <div class="container my-3">
+        <a class="navbar-brand nan" href="/index.html">
+          <h1>Auction Space</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span>
+            <i class="fa-solid fa-bars fa-lg"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/src/html/profile.html">Profile</a>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
+            <li class="nav-item">
+
+            <li class="nav-item">
+              <a class="nav-link" id="logOut" aria-current="page">Log out</a>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" />
+            <button class="btn" type="submit">
+              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section class="mt-5 container">
+    <!--  -->
+
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Edit Profile</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="picture" class="form-control py-3" id="editProfileImage" placeholder="Profile picture"
+              aria-label="image" />
+          </div>
+          <div class="modal-footer">
+            <button id="saveProfileImage" type="button"
+              class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark">Save</button>
           </div>
         </div>
-      </nav>
-    </section>
-    <section class="mt-5 container">
-      <!--  -->
-
-
-<!-- Modal -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1"  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Edit Profile</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input
-        type="picture"
-        class="form-control py-3"
-        id="editProfileImage"
-        placeholder="Profile picture"
-        aria-label="image"
-        />
-      </div>
-      <div class="modal-footer">
-        <button id="saveProfileImage" type="button" class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark">Save</button>
       </div>
     </div>
-  </div>
-</div>
-      <section>
-        <div class=" mb-4">
+    <section>
+      <div class=" mb-4">
         <div class="text-center">
-        <img
-        class="avatar img-profile">
-        <h2 class="mb-0 MainProfileName"></h2>
-        <div class="d-flex justify-content-center mb-2 mt-3">
-<button type="button" class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
- Edit
-</button>
-        </div> 
-        <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="labelModal">
-        <div class="modal-dialog modal-content">
-        <div class="mt-2">
-        <p id="labelModal">Edit Profile</p>
-        </div>
-        <div class="p-2">
-        <img 
-        class="rounded-circle img-fluid shadow-lg editAvatar" style="width: 155px;">
-        <div class="mt-3">
-        <input
-        type="picture"
-        class="form-control py-3"
-        id="editProfileImage"
-        placeholder="Profile picture"
-        aria-label="image"
-        /></div>
-        <button id="saveProfileImage" type="button" class="btn btn-outline-success shadow my-3">Save</button>
-        </div>
-        </section>
-        <!--  -->
-        <div class="mb-4">
-        <div>
-              <p class="mb-0 profileName">User:</p>
-          <hr>
-              <p class="mb-0 email">Email:</p>
-          <hr>
-              <p class="mb-0 totalCredits">Credits:</p>
-          <hr>
-        </div>
+          <img class="avatar img-profile">
+          <h2 class="mb-0 MainProfileName"></h2>
+          <div class="d-flex justify-content-center mb-2 mt-3">
+            <button type="button" class="btn btn-outline-success  ms-1 shadow-lg border rounded py-2 px-4 text-dark"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Edit
+            </button>
+          </div>
+          <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="labelModal">
+            <div class="modal-dialog modal-content">
+              <div class="mt-2">
+                <p id="labelModal">Edit Profile</p>
+              </div>
+              <div class="p-2">
+                <img class="rounded-circle img-fluid shadow-lg editAvatar" style="width: 155px;">
+                <div class="mt-3">
+                  <input type="picture" class="form-control py-3" id="editProfileImage" placeholder="Profile picture"
+                    aria-label="image" />
+                </div>
+                <button id="saveProfileImage" type="button" class="btn btn-outline-success shadow my-3">Save</button>
+              </div>
+    </section>
+    <!--  -->
+    <div class="mb-4">
+      <div>
+        <p class="mb-0 profileName">User:</p>
+        <hr>
+        <p class="mb-0 email">Email:</p>
+        <hr>
+        <p class="mb-0 totalCredits">Credits:</p>
+        <hr>
       </div>
- </section>
-    <footer class="fixed-bottom">
-      <div class="mt-5">
-      </div>
-      <div class="text-center text-dark shadow-lg py-5">
-        <a href = "mailto: gonlonge@icloud.com" class="text-decoration-none ">
+    </div>
+  </section>
+  <footer class="fixed-bottom">
+    <div class="mt-5">
+    </div>
+    <div class="text-center text-dark shadow-lg py-5">
+      <a href="mailto: gonlonge@icloud.com" class="text-decoration-none ">
         <div>Contact Us</div>
         <div>Auction Space</div>
       </a>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script type="module" src="/src/js/pages/index.mjs"></script>
-    <script type="module" src="/src/js/noroff-api-helper.mjs"></script>
-    <script type="module" src="/src/js/pages/profile.mjs"></script>
-    <script type="module" src="/src/js/components/createListing.mjs"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script type="module" src="/src/js/pages/index.mjs"></script>
+  <script type="module" src="/src/js/noroff-api-helper.mjs"></script>
+  <script type="module" src="/src/js/pages/profile.mjs"></script>
+  <script type="module" src="/src/js/components/createListing.mjs"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
 </html>
