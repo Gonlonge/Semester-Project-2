@@ -1,11 +1,9 @@
-import { placeBid } from "../noroff-api-helper.mjs";
+import { placeBid, getListing } from "../noroff-api-helper.mjs";
+import { getTimeLeft } from "../time-helper.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-
-const API_BASE_URL = "https://nf-api.onrender.com/";
-const API_LISTINGS = `api/v1/auction/listings/${id}?_seller=true&_bids=true`;
 
 const media = document.querySelector(".media");
 const specificTitle = document.querySelector(".specificTitle");
@@ -16,47 +14,35 @@ const bidAmount = document.querySelector(".bidAmount");
 const description = document.querySelector(".description");
 
 const bidButton = document.getElementById("bidButton");
-bidButton.addEventListener("click", async function () {
-  console.log("Bidding!");
+const bidButtonAmount = document.getElementById("bidButtonAmount");
 
-  const result = await placeBid(id, 11);
-  console.log(result);
+bidButton.addEventListener("click", async function () {
+  const amount = +(bidButtonAmount.value ?? 0);
+  if (amount > 0) {
+    const result = await placeBid(id, amount);
+    console.log(result);
+    location.reload();
+  }
 });
 
-async function specificAdvertisement(API_LISTINGS) {
+async function specificAdvertisement() {
   try {
-    const token = localStorage.getItem("accessToken");
-    const getAllData = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const response = await fetch(API_LISTINGS, getAllData);
-    const json = await response.json();
+    const json = await getListing(id);
 
+    console.log("RES;");
+    console.log(json);
     const bids = json.bids;
-    const highestBid = `$ ${(bids[bids.length - 1] ?? 0).amount ?? 0}`;
-    console.log(bids);
+    const latestBid = bids[bids.length - 1];
+    const highestBid = `$ ${(latestBid ?? 0).amount ?? 0}`;
+    const bidderName = latestBid ? latestBid.bidderName : "";
 
-    console.log(json.endsAt);
-    const diff = new Date(
-      new Date(json.endsAt).getTime() - new Date().getTime()
-    );
-    //var years = diff.getUTCFullYear() - 1970;
-    //var months = diff.getUTCMonth();
-    const days = diff.getUTCDate() - 1;
-    const hours = diff.getUTCHours() - 1;
-    const minutes = diff.getUTCMinutes() - 1;
-
-    const remainingTime = `${days} days ${hours} hours and ${minutes} minutes`;
+    const remainingTime = getTimeLeft(json.endsAt);
 
     media.setAttribute("src", json.media);
     specificTitle.innerHTML = json.title;
     sellerEmail.innerHTML = json.seller.email;
     timeEndsAt.innerHTML = remainingTime;
-    bidAmount.innerHTML = highestBid;
+    bidAmount.innerHTML = `${highestBid} – (bid by ${bidderName})`;
     currentBids.innerHTML = json._count.bids;
     description.innerHTML = json.description;
   } catch (error) {
@@ -64,6 +50,4 @@ async function specificAdvertisement(API_LISTINGS) {
   }
 }
 
-specificAdvertisement(API_BASE_URL + API_LISTINGS);
-
-$("input[type='number']").inputSpinner();
+specificAdvertisement();

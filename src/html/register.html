@@ -1,92 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Auction, new user, register, free credits, most popular" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/css/style.css" />
-    <title>Auction</title>
-  </head>
-  <body>
-    <section>
-      <div class="container py-5">
-        <div class="d-flex justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div class="shadow-2-strong" style="border-radius: 1rem">
-              <div>
-                <h2 class="text-center mt-5">Create Account</h2>
-                <form id="registerForm"  class="text-center">
-                          <div class="my-1">
-                            <input
-                            id="name"
-                            aria-label="Only @(stud.)noroff.no domains are allowed to login."
-                            class="form-control py-3"
-                            type="text"
-                            name="name"
-                            required
-                            pattern="^[\w]+$"
-                            placeholder="Username"
-                          />
-                        </div>
-                    <!--  -->
-                    <div class="my-3">
-                      <input
-                      id="email"
-                      aria-label="Only @(stud.)noroff.no domains are allowed to login."
-                      class="form-control py-3"
-                      type="email"
-                      name="email"
-                      required
-                      pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                      placeholder="Email (@noroff.no)"
-                    />
-                      </div>
-                      <!--  -->
-                      <div class="my-3">
-                        <input
-                        id="profileImage"
-                        class="form-control py-3"
-                        type="url"
-                        name="profileImage"
-                        placeholder="Image"
-                      />
-                    </div>
-                    <!--  -->
-                        <div class="my-1">
-                          <input
-                          type="password"
-                          class="form-control py-3"
-                          id="password"
-                          placeholder="Password"
-                          aria-label="password"
-                          name="password"
-                          required
-                          minlength="8"
-                        />
-                      </div>
-                    <div>
-                      <div class="my-5">
-                        <button id="sign-in-button" class="btn btn-primary px-5 btn-lg btn-block shadow-lg text-dark">
-                          Sign Up
-                        </button>
-                </div> 
-               </form>
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auction, new user, register, free credits, most popular" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Oswald&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/style.css" />
+  <title>Auction</title>
+</head>
+<body>
+  <section>
+    <div class="container py-5">
+      <div class="d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="shadow-2-strong" style="border-radius: 1rem">
+            <div>
+              <h2 class="text-center mt-5">Create Account</h2>
+              <form id="registerForm" class="text-center">
+                <div class="my-1">
+                  <input id="name" aria-label="Only @(stud.)noroff.no domains are allowed to login."
+                    class="form-control py-3" type="text" name="name" required pattern="^[\w]+$"
+                    placeholder="Username" />
+                </div>
+                <div class="my-3">
+                  <input id="email" aria-label="Only @(stud.)noroff.no domains are allowed to login."
+                    class="form-control py-3" type="email" name="email" required pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                    placeholder="Email (@noroff.no)" />
+                </div>
+                <div class="my-3">
+                  <input id="profileImage" class="form-control py-3" type="url" name="profileImage"
+                    placeholder="Image" />
+                </div>
+                <div class="my-1">
+                  <input type="password" class="form-control py-3" id="password" placeholder="Password"
+                    aria-label="password" name="password" required minlength="8" />
+                </div>
+                <div>
+                  <div class="my-5">
+                    <button id="sign-in-button" class="btn btn-primary px-5 btn-lg btn-block shadow-lg text-dark">
+                      Sign Up
+                    </button>
+                  </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
-        </div>
-      </div>
-    </section>
-    <script type="module" src="/src/js/pages/signin.mjs"></script>
-  </body>
+    </div>
+  </section>
+  </div>
+  </div>
+  </section>
+  <script type="module" src="/src/js/pages/base.mjs"></script>
+  <script type="module" src="/src/js/pages/signin.mjs"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
 </html>
-

@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Gonlonge/Semester-Project-2#readme",
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.3"
   },
   "devDependencies": {
     "live-server": "^1.2.2",

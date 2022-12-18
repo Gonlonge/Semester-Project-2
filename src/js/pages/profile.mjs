@@ -36,11 +36,11 @@ function profileHtml(user) {
 }
 
 async function saveImage() {
-  console.log("CLICK");
   const user = load(userKey);
   const res = await updateProfileImage(editProfileImage.value, user.name);
   save(res);
   avatar.setAttribute("src", res.avatar);
+  location.reload();
 }
 console.log(saveProfileImage);
 saveProfileImage.addEventListener("click", saveImage);

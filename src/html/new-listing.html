@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,293 +16,140 @@
   <link rel="stylesheet" href="/dist/css/style.css" />
   <title>Auction</title>
 </head>
-
 <body>
   <main>
-  <section>
-    <div class="container my-3">
-    </div>
-
-    <nav class="navbar navbar-expand-lg shadow-lg">
+    <section>
       <div class="container my-3">
-        <a class="navbar-brand nan" href="/index.html">
-          <h1>Auction Space</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span>
-            <i class="fa-solid fa-bars fa-lg"></i></span>
+      </div>
+      <nav class="navbar navbar-expand-lg shadow-lg">
+        <div class="container my-3">
+          <a class="navbar-brand nan" href="/index.html">
+            <h1>Auction Space</h1>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span>
+              <i class="fa-solid fa-bars fa-lg"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/src/html/profile.html">Profile</a>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
+              <li class="nav-item">
+                <a class="nav-link" id="logOut" aria-current="page">Log out</a>
+            </ul>
+            <form id="listingsSearch" class="d-flex" role="search">
+              <input
+                id="searchInput"
+                name="searchInput"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"/>
+              <button class="btn" type="submit">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      </div>
+      <div id="postsContainer"></div>
+      <section class="container mt-5">
+        <h2 class="mb-3 mt-5 text-center">New Ad</h2>
+        </div>
+        <textarea id="postTitle" rows="1" class="mt-4 form-control" placeholder="Title..."></textarea>
+        </div>
+        <textarea id="postDescription" rows="3" class="mt-2 form-control" placeholder="Description..."></textarea>
+        <input id="postMedia" class="form-control py-3 mt-2" type="url" name="media" placeholder="Image URL" />
+        <h3 class="mt-4">Deadline date:</h3>
+        <div>
+          <div class="row ">
+            <div class="col-sm">
+              <select id="postDay" class="form-select mb-2">
+                <option value="">Date</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <select id="postMonth" class="mb-2 form-select">
+                <option value="">Day</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <select id="postYear" class="mb-2 form-select">
+                <option value="">Year</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button id="publishPost" type="button"
+          class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
+          Publish
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/src/html/profile.html">Profile</a>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
-            <li class="nav-item">
-              <a class="nav-link" id="logOut" aria-current="page">Log out</a>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" />
-            <button class="btn" type="submit">
-              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    </div>
-    <div id="postsContainer"></div>
-    <section class="container mt-5">
-      <h2 class="mb-3 mt-5 text-center">New Ad</h2>
-
-
-      </div>
-      <textarea id="postTitle" rows="1" class="mt-4 form-control" placeholder="Title..."></textarea>
-
-      </div>
-      <textarea id="postDescription" rows="3" class="mt-2 form-control" placeholder="Description..."></textarea>
-      <input id="postMedia" class="form-control py-3 mt-2" type="url" name="media" placeholder="Image URL" />
-
-      <!--  -->
-      <h3 class="mt-4">Deadline date:</h3>
-      <div>
-        <div class="row ">
-          <div class="col-sm">
-            <select id="postDay" class="form-select mb-2">
-              <option value="">Date</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-            </select>
-          </div>
-          <div class="col-sm">
-            <select id="postMonth" class="mb-2 form-select">
-              <option value="">Day</option>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">Oktober</option>
-              <option value="11">November</option>
-              <option value="12">Desember</option>
-            </select>
-          </div>
-          <div class="col-sm">
-            <select id="postYear" class="mb-2 form-select">
-              <option value="">Year</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <!--  -->
-
-
-      <button id="publishPost" type="button"
-        class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
-        Publish
-      </button>
-      <section>
-        <section>
-          <div class="mt-5">
-            <h2 class="mb-3 text-center">Your Advertisements</h2>
-            <!--  -->
-            <div class="row">
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-            </div>
-        </section>
-
-        <section>
-          <div class="mt-5">
-            <h2 class="mb-3text-center">Your Bids</h2>
-            <!--  -->
-            <div class="row">
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div></a>
-              <!--  -->
-              <div class="shadow-sm  p-3 col-xl-3 col-lg-4 col-md-6 mb-4 mt-5"><a
-                  href="advertisement.html?id=${json[i].id}" class="text-decoration-none">
-                  <div class="card border-white my-5">
-                    <img src="/images/150.png">
-                    <div class="mt-1">
-                      <div>
-                        <h2>Title of you listing</h2>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <p class=" mb-0"><span class="text-dark">Current: $: 3232</span></p>
-                        <div class="px-4 text-danger">Ends at 1h 20m</div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              </a>
-            </div>
-          </div>
-          </div>
-        </section>
-
       </section>
-    </section>
   </main>
-    <footer>
-      <div class="mt-5">
-      </div>
-      <div class="text-center text-dark shadow-lg py-5">
-        <a href="mailto: gonlonge@icloud.com" class="text-decoration-none ">
-          <div>Contact Us</div>
-          <div>Auction Space</div>
-        </a>
-      </div>
-    </footer>
-    <script type="module" src="/src/js/pages/newListing.mjs"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <footer>
+    <div class="mt-5">
+    </div>
+    <div class="text-center text-dark shadow-lg py-5">
+      <a href="mailto: gonlonge@icloud.com" class="text-decoration-none ">
+        <div>Contact Us</div>
+        <div>Auction Space</div>
+      </a>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/pages/base.mjs"></script>
+  <script type="module" src="/src/js/pages/newListing.mjs"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,105 +15,110 @@
   <link rel="stylesheet" href="/dist/css/style.css" />
   <title>Auction</title>
 </head>
-
 <body>
   <main>
-  <section>
-    <div class="container my-3">
-    </div>
-    <nav class="navbar navbar-expand-lg shadow-lg">
+    <section>
       <div class="container my-3">
-        <a class="navbar-brand nan" href="/index.html">
-          <h1>Auction Space</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span>
-            <i class="fa-solid fa-bars fa-lg"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/src/html/profile.html">Profile</a>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
-            <li class="nav-item">
-              <a class="nav-link" id="logOut" aria-current="page">Log out</a>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" />
-            <button class="btn" type="submit">
-              <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
       </div>
-    </nav>
-  </section>
-  <div class="container">
-    <div class="detail-results">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md">
-            <div>
-              <img class="w-100 media">
-            </div>
+      <nav class="navbar navbar-expand-lg shadow-lg">
+        <div class="container my-3">
+          <a class="navbar-brand nan" href="/index.html">
+            <h1>Auction Space</h1>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span>
+              <i class="fa-solid fa-bars fa-lg"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/src/html/profile.html">Profile</a>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/src/html/new-listing.html">New Listing</a>
+              <li class="nav-item">
+                <a class="nav-link" id="logOut" aria-current="page">Log out</a>
+            </ul>
+            <form id="listingsSearch" class="d-flex" role="search">
+              <input
+                id="searchInput"
+                name="searchInput"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"/>
+              <button class="btn" type="submit">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
           </div>
-          <div class="col-md">
-            <div>
-              <h2 class="specificTitle"></h2>
-              <div class="card-body mt-3">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">
-                      Email:</p>
+        </div>
+      </nav>
+    </section>
+    <div class="container">
+      <div class="detail-results">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md">
+              <div>
+                <img class="w-100 media">
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="mt-1">
+                <h2 class="specificTitle"></h2>
+                <div class="card-body mt-3">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">
+                        Email:</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="mb-0 sellerEmail"></p>
+                    </div>
                   </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0 ">Time Remaining:</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="mb-0 timeEndsAt"></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Bids:</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="mb-0 currentBids"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Leading:</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="mb-0 bidAmount"></p>
+                    </div>
+                  </div>
+                  <hr>
                   <div class="col-sm-9">
-                    <p class="mb-0 sellerEmail"></p>
                   </div>
-                </div>
-                <!--  -->
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0 ">Time Remaining:</p>
+                  <div class="col-sm-9 mt-4">
+                    <p class="description"></p>
                   </div>
-                  <div class="col-sm-9">
-                    <p class="mb-0 timeEndsAt"></p>
+                  <div class="text-center">
+                    <button id="bidButton" type="button"
+                      class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
+                      Place your bid
+                      <input id="bidButtonAmount" class="border-0 m-1" type="number" placeholder="0">
+                    </button>
                   </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Current Bids Made:</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="mb-0 currentBids"></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-3">
-                    <p class="mb-0">Leading Bid:</p>
-                  </div>
-                  <div class="col-sm-9">
-                    <p class="mb-0 bidAmount"></p>
-                  </div>
-                </div>
-                <hr>
-                <div class="col-sm-9">
-                </div>
-                <div class="col-sm-9 mt-4">
-                  <p class="description"></p>
-                </div>
-                <div class="text-center">
-
-                  <button id="bidButton" type="button"
-                    class="text-dark btn btn-primary btn-m mt-3 shadow-lg text-decoration-none btn-outline-success ">
-                    Place Bid
-                    <input class="border-0 m-1" type="number" placeholder="0">
-                  </button>
                 </div>
               </div>
             </div>
@@ -122,8 +126,7 @@
         </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
   <footer>
     <div class="mt-5">
     </div>
@@ -134,6 +137,7 @@
       </a>
     </div>
   </footer>
+  <script type="module" src="/src/js/pages/base.mjs"></script>
   <script type="module" src="/src/js/pages/advertisement.mjs"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>

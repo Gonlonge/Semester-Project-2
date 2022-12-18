@@ -1,13 +1,18 @@
-<!-- supermetroid@stud.noroff.no -->
-
-<!-- supermetroid -->
-
 # Semester-Project-2
 
 ## Project trello board kaban and timing
 
 ```
-https://trello.com/b/oVYcnmd4/kanban-template
+
+https://trello.com/b/oVYcnmd4/semester-project-2
+
+```
+
+## Adobe XD
+
+```
+
+https://xd.adobe.com/view/5f963598-395e-4b05-a03f-b0243ef6c345-0ac5/
 
 ```
 

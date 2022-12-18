@@ -8,9 +8,7 @@ const API_BASE_URL = "https://nf-api.onrender.com";
 const API_AUTH_REGISTER = "/api/v1/auction/auth/register";
 const API_AUTH_LOGIN = "/api/v1/auction/auth/login";
 const API_AUCTION_PROFILE = "/api/v1/auction/profiles/";
-const API_CREATE_POST = "/api/v1/auction/listings";
-
-// const API_flag = "/?_seller=true&_bids=true&sort=created&sortOrder=desc";
+const API_LISTINGS = "/api/v1/auction/listings";
 
 const userKey = "noroff-user-key";
 
@@ -202,7 +200,6 @@ async function getAuctionProfile(name) {
 }
 
 // update avatar image
-
 async function updateProfileImage(url, name) {
   try {
     const data = stringify({
@@ -245,7 +242,7 @@ async function createListings(title, description, endsAt, media) {
     endsAt: endsAt,
     media: mediaJson,
   };
-  let apiResponse = await noroffPOST(API_CREATE_POST, postBody);
+  let apiResponse = await noroffPOST(API_LISTINGS, postBody);
   const json = await apiResponse.json();
 
   return {
@@ -261,13 +258,53 @@ async function placeBid(id, amount) {
 
   console.log(postBody);
 
-  let apiResponse = await noroffPOST(`${API_CREATE_POST}/${id}/bids`, postBody);
+  let apiResponse = await noroffPOST(`${API_LISTINGS}/${id}/bids`, postBody);
   const json = await apiResponse.json();
 
   return {
     json: json,
     statusCode: apiResponse.status,
   };
+}
+
+async function getListings() {
+  try {
+    const request = {
+      method: "GET",
+      headers: getHeader(),
+    };
+    const apiResponse = await fetch(
+      API_BASE_URL +
+        API_LISTINGS +
+        "?sort=created&sortOrder=desc&_seller=true&_bids=true",
+      request
+    );
+    console.table(apiResponse);
+
+    return apiResponse.json();
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+}
+
+async function getListing(id) {
+  try {
+    const request = {
+      method: "GET",
+      headers: getHeader(),
+    };
+    const apiResponse = await fetch(
+      API_BASE_URL + API_LISTINGS + `/${id}?_seller=true&_bids=true`,
+      request
+    );
+    console.table(apiResponse);
+
+    return apiResponse.json();
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
 }
 
 export {
@@ -279,6 +316,8 @@ export {
   noroffGET,
   logOut,
   updateProfileImage,
+  getListings,
+  getListing,
   createListings,
   placeBid,
 };
