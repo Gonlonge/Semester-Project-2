@@ -1,5 +1,13 @@
 # Semester-Project-2
 
+## Netlify
+
+```
+
+https://boisterous-bavarois-0d3175.netlify.app/
+
+```
+
 ## Project trello board kaban and timing
 
 ```
