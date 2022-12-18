@@ -1,35 +1,47 @@
 import { createListings } from "../noroff-api-helper.mjs";
 
-// Home:
-
-// Navigate to single post
-/*
-function openPost(id) {
-  window.location.href = "/src/html/new-listing.html?id=" + id;
-}
-window.openPost = openPost;
-*/
-
-// Publish post:
 const publishPost = document.getElementById("publishPost");
 const postTitle = document.getElementById("postTitle");
-const description = document.getElementById("description");
+const description = document.getElementById("postDescription");
+const media = document.getElementById("postMedia");
+const postDay = document.getElementById("postDay");
+const postMonth = document.getElementById("postMonth");
+const postYear = document.getElementById("postYear");
 
-console.log("publish post");
-console.log(publishPost);
+Date.prototype.addDays = function (d) {
+  this.setDate(this.getDate() + d);
+  return this;
+};
 
 publishPost.addEventListener("click", async function () {
   const title = postTitle.value;
   const bodyDescription = description.value;
+  const mediaPost = media.value;
+
+  const day = postDay.value;
+  const month = postMonth.value;
+  const year = postYear.value;
+  var date = new Date().addDays(28);
+
+  if (day && month && year) {
+    date = new Date(year, month, day);
+  }
+  const jsonDate = date.toJSON();
+
+  console.log(jsonDate);
 
   if (title.length > 0 && bodyDescription.length > 0) {
-    console.log("Fire!");
-    const result = await createListings(title, bodyDescription);
-    console.log("Awaited and complete");
+    const result = await createListings(
+      title,
+      bodyDescription,
+      jsonDate,
+      mediaPost
+    );
+    console.log("Create Listing Result:");
     console.table(result);
-    if (result.statusCode === 200) {
-      // Success
+    if (result.statusCode === 201) {
       console.log("success");
+      window.location.href = "../../../index.html";
     }
   }
 });

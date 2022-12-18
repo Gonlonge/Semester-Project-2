@@ -232,17 +232,36 @@ async function updateProfileImage(url, name) {
   }
 }
 
-// Create post
-
+// Create post:
 async function createListings(title, description, endsAt, media) {
+  const mediaJson = [];
+  if (media) {
+    mediaJson.push(media);
+  }
+
   const postBody = {
     title: title,
     description: description,
-    endsAt: "2022-12-24T22:07:00.000Z",
-    // tags: [],
-    media: media,
+    endsAt: endsAt,
+    media: mediaJson,
   };
   let apiResponse = await noroffPOST(API_CREATE_POST, postBody);
+  const json = await apiResponse.json();
+
+  return {
+    json: json,
+    statusCode: apiResponse.status,
+  };
+}
+
+async function placeBid(id, amount) {
+  const postBody = {
+    amount: amount,
+  };
+
+  console.log(postBody);
+
+  let apiResponse = await noroffPOST(`${API_CREATE_POST}/${id}/bids`, postBody);
   const json = await apiResponse.json();
 
   return {
@@ -261,4 +280,5 @@ export {
   logOut,
   updateProfileImage,
   createListings,
+  placeBid,
 };
