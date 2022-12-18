@@ -19,6 +19,7 @@
 </head>
 
 <body>
+  <main>
   <section>
     <div class="container my-3">
     </div>
@@ -63,15 +64,15 @@
       <textarea id="postTitle" rows="1" class="mt-4 form-control" placeholder="Title..."></textarea>
 
       </div>
-      <textarea id="postDescription" rows="3" class="mt-4 form-control" placeholder="Description..."></textarea>
+      <textarea id="postDescription" rows="3" class="mt-2 form-control" placeholder="Description..."></textarea>
       <input id="postMedia" class="form-control py-3 mt-2" type="url" name="media" placeholder="Image URL" />
 
       <!--  -->
-      <p class="mt-4">Deadline date:</p>
+      <h3 class="mt-4">Deadline date:</h3>
       <div>
         <div class="row ">
           <div class="col-sm">
-            <select id="postDay" class="mt-1 form-select">
+            <select id="postDay" class="form-select mb-2">
               <option value="">Date</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -107,7 +108,7 @@
             </select>
           </div>
           <div class="col-sm">
-            <select id="postMonth" class="mt-1 form-select">
+            <select id="postMonth" class="mb-2 form-select">
               <option value="">Day</option>
               <option value="1">January</option>
               <option value="2">February</option>
@@ -124,7 +125,7 @@
             </select>
           </div>
           <div class="col-sm">
-            <select id="postYear" class="mt-1 form-select">
+            <select id="postYear" class="mb-2 form-select">
               <option value="">Year</option>
               <option value="2022">2022</option>
               <option value="2023">2023</option>
@@ -291,6 +292,7 @@
 
       </section>
     </section>
+  </main>
     <footer>
       <div class="mt-5">
       </div>
@@ -304,5 +306,4 @@
     <script type="module" src="/src/js/pages/newListing.mjs"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
-
 </html>

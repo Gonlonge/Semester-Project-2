@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 $primary-color: #efefef;
 $secondary-color: #e04747;
@@ -18,7 +18,7 @@ h4 {
 p,
 a {
   font-family: "oswald", Arial, Helvetica, sans-serif;
-  color: black;
+  color: #000000;
 }
 
 a:hover {
@@ -85,4 +85,10 @@ a:hover {
 .img-profile {
   max-height: 150px;
   max-width: 150px;
+}
+
+// Footer
+
+main {
+  min-height: calc(100vh - 160px);
 }
