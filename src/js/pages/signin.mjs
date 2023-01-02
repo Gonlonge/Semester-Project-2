@@ -13,7 +13,6 @@ if (registerForm) {
     const name = profile["name"];
     const password = profile["password"];
     const profileImage = profile["profileImage"];
-    console.log(profileImage);
 
     if (email && name && password) {
       const result = await postAuthRegister(
@@ -23,24 +22,16 @@ if (registerForm) {
         profileImage
       );
       if (result.statusCode === 201) {
-        console.log(result.json);
-        console.log("Success! User has been registered at Noroff.");
         const user = result.json;
-        console.log(user);
         const res = await postAuthLogin(user.email, password);
-        console.log(res);
         if (res && res.statusCode === 200) {
-          console.log(res.json);
-          console.log("Success! User has been logged in.");
           window.location.href = "../../../index.html";
           return;
         }
       }
       if (result.statusCode === 401) {
-        console.log("Incorrect email, name and password");
         return;
       }
     }
-    console.error("Something went wrong");
   });
 }

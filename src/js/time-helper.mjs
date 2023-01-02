@@ -1,5 +1,4 @@
 function getTimeLeft(endsAt, isShort = false) {
-  console.log(endsAt);
   const diff = new Date(new Date(endsAt).getTime() - new Date().getTime());
 
   const days = diff.getUTCDate() - 1;

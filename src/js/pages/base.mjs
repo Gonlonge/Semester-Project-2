@@ -6,7 +6,6 @@ const listingsSearch = document.getElementById("listingsSearch");
 function logOutEvent() {
   if (isLoggedIn()) {
     // Logging out
-    console.log("click");
     logOut();
     window.location.href = "/index.html";
   } else {
@@ -27,7 +26,6 @@ listingsSearch.addEventListener("submit", async (event) => {
   const formData = new FormData(form);
   const entries = Object.fromEntries(formData.entries());
   const searchInput = entries.searchInput;
-  console.log(searchInput);
 
   if (searchInput) {
     window.location.href = `/index.html?search=${searchInput}`;

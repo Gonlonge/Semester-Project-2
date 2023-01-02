@@ -4,8 +4,6 @@ import { getTimeLeft } from "../time-helper.mjs";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const searchQuery = params.get("search");
-console.log(searchQuery);
-
 const content = document.querySelector(".apiContainer");
 const searchInput = document.getElementById("searchInput");
 
@@ -30,7 +28,6 @@ async function getListing() {
       json = searchElements;
     }
 
-    console.log(json);
     json.forEach((post) => {
       const timeRemaining = getTimeLeft(post.endsAt, true);
       const bids = post.bids;
@@ -61,9 +58,7 @@ async function getListing() {
         </div>
       </div></a>`;
     });
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 getListing();

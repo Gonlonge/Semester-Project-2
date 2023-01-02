@@ -28,8 +28,6 @@ publishPost.addEventListener("click", async function () {
   }
   const jsonDate = date.toJSON();
 
-  console.log(jsonDate);
-
   if (title.length > 0 && bodyDescription.length > 0) {
     const result = await createListings(
       title,
@@ -37,10 +35,7 @@ publishPost.addEventListener("click", async function () {
       jsonDate,
       mediaPost
     );
-    console.log("Create Listing Result:");
-    console.table(result);
     if (result.statusCode === 201) {
-      console.log("success");
       window.location.href = "../../../index.html";
     }
   }

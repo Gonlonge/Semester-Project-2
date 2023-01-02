@@ -20,8 +20,6 @@ function getHeader() {
   const headers = defaultHeaders;
   const user = load(userKey);
   if (user) {
-    console.log("TOKEN:");
-    console.log(user.accessToken);
     headers["Authorization"] = `Bearer ${user.accessToken}`;
   }
   return headers;
@@ -35,16 +33,12 @@ function getHeader() {
 function stringify(data) {
   try {
     return JSON.stringify(data);
-  } catch {
-    console.log(error);
-  }
+  } catch {}
   return null;
 }
 
 function isLoggedIn() {
   const res = load(userKey);
-  console.log("load:");
-  console.table(res);
   if (res) {
     const token = res["accessToken"];
     return token !== null;
@@ -54,8 +48,6 @@ function isLoggedIn() {
 
 function getProfileName() {
   const res = load(userKey);
-  console.log("load:");
-  console.table(res);
   if (res) {
     const name = res["name"];
     return name;
@@ -86,11 +78,8 @@ async function noroffPOST(url, body) {
       body: data,
     };
     const apiResponse = await fetch(API_BASE_URL + url, request);
-    console.log(apiResponse);
     return apiResponse;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
   return null;
 }
 
@@ -117,9 +106,7 @@ async function postAuthRegister(username, email, password, profileImage) {
       avatar: profileImage ?? "",
     };
     let apiResponse = await noroffPOST(API_AUTH_REGISTER, body);
-    console.table(apiResponse);
     const json = await apiResponse.json();
-    console.log(json);
     if (apiResponse.status === 201) {
       save(userKey, json);
     }
@@ -148,9 +135,7 @@ async function postAuthLogin(email, password) {
       password: password,
     };
     let apiResponse = await noroffPOST(API_AUTH_LOGIN, body);
-    console.table(apiResponse);
     const json = await apiResponse.json();
-    console.log(json);
     if (apiResponse.status === 200) {
       save(userKey, json);
     }
@@ -172,11 +157,8 @@ async function noroffGET(url) {
       headers: getHeader(),
     };
     const apiResponse = await fetch(API_BASE_URL + url, request);
-    console.table(apiResponse);
     return apiResponse;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
   return null;
 }
 
@@ -191,12 +173,9 @@ async function getAuctionProfile(name) {
       API_BASE_URL + API_AUCTION_PROFILE + (name ?? ""),
       request
     );
-    console.table(apiResponse);
     const json = await apiResponse.json();
     return json;
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 // update avatar image
@@ -215,18 +194,10 @@ async function updateProfileImage(url, name) {
       body: data,
     };
     const requestUrl = `${API_BASE_URL}${API_AUCTION_PROFILE}${name}/media`;
-    console.log("Update Profile Image:");
-    console.log(request);
-    console.log(requestUrl);
     const apiResponse = await fetch(requestUrl, request);
-    console.table(apiResponse);
     const json = await apiResponse.json();
-    console.log("Response:");
-    console.log(json);
     return json;
-  } catch (error) {
-    console.error(error);
-  }
+  } catch (error) {}
 }
 
 // Create post:
@@ -256,8 +227,6 @@ async function placeBid(id, amount) {
     amount: amount,
   };
 
-  console.log(postBody);
-
   let apiResponse = await noroffPOST(`${API_LISTINGS}/${id}/bids`, postBody);
   const json = await apiResponse.json();
 
@@ -279,12 +248,9 @@ async function getListings() {
         "?sort=created&sortOrder=desc&_seller=true&_bids=true",
       request
     );
-    console.table(apiResponse);
 
     return apiResponse.json();
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
   return null;
 }
 
@@ -298,12 +264,9 @@ async function getListing(id) {
       API_BASE_URL + API_LISTINGS + `/${id}?_seller=true&_bids=true`,
       request
     );
-    console.table(apiResponse);
 
     return apiResponse.json();
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
   return null;
 }
 

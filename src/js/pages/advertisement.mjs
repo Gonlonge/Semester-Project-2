@@ -20,7 +20,6 @@ bidButton.addEventListener("click", async function () {
   const amount = +(bidButtonAmount.value ?? 0);
   if (amount > 0) {
     const result = await placeBid(id, amount);
-    console.log(result);
     location.reload();
   }
 });
@@ -28,9 +27,6 @@ bidButton.addEventListener("click", async function () {
 async function specificAdvertisement() {
   try {
     const json = await getListing(id);
-
-    console.log("RES;");
-    console.log(json);
     const bids = json.bids;
     const latestBid = bids[bids.length - 1];
     const highestBid = `$ ${(latestBid ?? 0).amount ?? 0}`;
@@ -45,9 +41,7 @@ async function specificAdvertisement() {
     bidAmount.innerHTML = `${highestBid} – (bid by ${bidderName})`;
     currentBids.innerHTML = json._count.bids;
     description.innerHTML = json.description;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 specificAdvertisement();

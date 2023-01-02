@@ -4,8 +4,6 @@
  * @param {string} value – object data to store
  */
 function save(key, value) {
-  console.log("Storing:");
-  console.table(value);
   localStorage.setItem(key, JSON.stringify(value));
 }
 
@@ -19,11 +17,8 @@ function load(key) {
   if (value) {
     try {
       const obj = JSON.parse(value);
-      console.log("Getting:");
-      console.table(obj);
       return obj;
     } catch (error) {
-      console.log(error);
       return null;
     }
   }

@@ -5,7 +5,6 @@ import {
 import { load, save } from "/src/js/storage-helper.mjs";
 
 const userKey = "noroff-user-key";
-
 const avatar = document.querySelector(".avatar");
 const MainProfileName = document.querySelector(".MainProfileName");
 const profileName = document.querySelector(".profileName");
@@ -18,12 +17,8 @@ async function getProfile() {
   try {
     const user = load(userKey);
     const json = await getAuctionProfile(user.name);
-    console.log("JSON");
-    console.log(json);
     profileHtml(json);
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 function profileHtml(user) {
@@ -42,7 +37,6 @@ async function saveImage() {
   avatar.setAttribute("src", res.avatar);
   location.reload();
 }
-console.log(saveProfileImage);
 saveProfileImage.addEventListener("click", saveImage);
 
 getProfile();
