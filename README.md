@@ -22,6 +22,7 @@ All API functionality is managed by an existing application. This project only c
 - JavaScript
 - CSS
 - SCSS
+- HTML
 
 ## Designed With
 
