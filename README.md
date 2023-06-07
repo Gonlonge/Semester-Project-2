@@ -3,7 +3,8 @@
 College: Noroff - Frondend developer
 Date: 05.2022
 
-![Skjermbilde 2022-05-30 kl  12 09 29](https://user-images.githubusercontent.com/89197537/170970427-cb490af5-59e2-4353-8616-5da69c6253e0.png)
+<img width="539" alt="portofoli-semester-project-2" src="https://github.com/Gonlonge/Semester-Project-2/assets/89197537/0e2fb9c2-f9a3-49b0-b84b-b712e3c496bf">
+
 
 ## Brief
 An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
