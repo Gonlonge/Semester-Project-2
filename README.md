@@ -19,9 +19,8 @@ All API functionality is managed by an existing application. This project only c
 ## Built With
 
 - JavaScript
-- Bootstrap
 - CSS
-- SASS
+- SCSS
 
 ## Designed With
 
